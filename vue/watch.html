@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>watch</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="dothings">监听按钮</button>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                a:10,
+                b:[]
+            },
+            methods:{
+                dothings:function(){
+                    this.a++;
+                }
+            },
+            watch:{
+                "a":function(val,oldval){
+                    alert(val,oldval);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
