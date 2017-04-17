@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>props</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!-- <p>{{ price }}</p> -->
+    <label><input type="radio" value="nan" v-model="xb">男</label>
+    <label><input type="radio" value="nv" v-model="xb">女</label>
+    <p>{{xb}}</p>
+</div>
+</body>
+<script>
+//    var vm =  new Vue({
+//     el:"#app",
+//     data:{
+//             cents:100,
+//     },
+//     computed:{
+//         price:{
+//             set:function(newValue){
+//                 this.cents = newValue*100;
+//             },
+//             get:function(){
+//                 return (this.cents/100).toFixed(2);
+//             }
+//         }
+//     }
+// });
+new  Vue({
+    el:"#app",
+    data:{
+        xb:''
+    }
+})
+</script>
+</html>
