@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class用法</title>
+    <script src="vue.js"></script>
+    <style>
+        .cor{
+            color: #333;
+        }
+        .bgcor{
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p :class="{cor:a,bgcor:b}">这是一段文字！</p>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                a:true,
+                b:false
+            }
+        })
+    </script>
+</body>
+</html>

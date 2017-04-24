@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加，删除用户信息</title>
+    <script src="vue.js"></script>
+    <style>
+        table{
+            width: 600px;
+            border-left: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        table td, table th{
+            border-right: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        姓名：<input type="text" v-model="vname" placeholder ="请输入姓名"><br/>
+        年龄：<input type="text" v-model="vage" placeholder="请输入年龄"><br/>
+        <div class="cz">
+            <input type="button" v-on:click="add()" value="添加">
+            <input type="reset" value="重置">
+        </div>
+        <table cellspacing="0" cellpadding="0">
+            <tr>
+                <th width="10%">序号</th>
+                <th width="30%">姓名</th>
+                <th width="30%">年龄</th>
+                <th width="30%">操作</th>
+            </tr>
+            <tr v-for="item in items">
+                <td></td>
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>
+                    <input type="button" value="删除">
+                </td>
+            </tr>
+        </table>
+        <p v-show="items.length!=0"><input type="button" value="删除全部"></p>
+        <p v-show="items.length==0">暂无数据。。。。</p>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                items:[
+                    // {name:'xx',age:'23'}  
+                 ],
+                vname:'',
+                vage:''
+            },
+            methods:{
+                add:function(){
+                   this.items.push({
+                        name:this.vname,
+                        age:this.vage
+                   })
+                }
+            }
+        })
+    </script>
+</body>
+</html>
