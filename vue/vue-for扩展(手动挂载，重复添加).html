@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <script src="vue.js"></script>
+    <script>
+        window.onload = function(){
+            var vm = new Vue({
+                data:{
+                    arr:['apple','banana','pear']
+                },
+                methods:{
+                    add:function(){
+                        this.arr.push('orange');
+                    }
+                }
+            }).$mount('#app');
+        }
+    </script>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="添加" @click="add"/>
+    <ul>
+        <li v-for= 'value in arr' track-by="$index">
+            {{ value }}
+        </li>
+    </ul>
+</div>
+</body>
+</html>
