@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="1.0/vue.js"></script>
+    <script>
+        window.onload = function(){
+            new Vue({
+                data:{
+                    arr:["apple","orange","pear","banana","dog"],
+                    a:''
+                }
+            }).$mount('#app');
+        }
+    </script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="a">
+        <ul>
+            <li v-for="value in arr | filterBy a">
+                {{ value }}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
