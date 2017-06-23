@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>自定义指令</title>
-    <script src="1.0/vue.js"></script>
+    <script src="vue.js"></script>
 </head>
-<body class="test">
+<body>
+<div class="test">
     <textarea name="" id="" cols="30" rows="10">{{meg}}</textarea>
-    <div v-red v-html="meg">{{meg}}</div>
+    <div v-red v-html="meg"></div>
     <div v-text="meg"></div>
+</div>
     <script>
         window.onload=function(){
             Vue.directive('red',function(){
-                this.el.style.color="red";
+                alert(000);
             })
             new Vue({
                 data:{
