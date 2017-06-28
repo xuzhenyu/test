@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue动画toggle</title>
+    <script src="vue.js"></script>
+    <style>
+        p{
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <input type="button" value="按钮" @click="toggle">
+        <p v-show="sta"></p>
+    </div>
+    <script>
+       new Vue({
+            data:{
+                sta:true
+            },
+            methods:{
+                toggle(){
+                    this.sta =! this.sta;
+                }
+            }
+        }).$mount("#box");
+    </script>
+</body>
+</html>
