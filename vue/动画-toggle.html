@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>vue动画toggle</title>
-    <script src="vue.js"></script>
+    <script src="1.0/vue.js"></script>
+    <link rel="stylesheet" href="animate.css">
     <style>
+        #box{
+            width: 500px;
+            margin: 0 auto;
+        }
         p{
-            width: 200px;
-            height: 200px;
+            width: 100px;
+            height: 100px;
             background-color: #ccc;
         }
     </style>
@@ -15,7 +20,7 @@
 <body>
     <div id="box">
         <input type="button" value="按钮" @click="toggle">
-        <p v-show="sta"></p>
+        <p class="animated"  v-show="sta" transition="bounce"></p>
     </div>
     <script>
        new Vue({
@@ -25,6 +30,12 @@
             methods:{
                 toggle(){
                     this.sta =! this.sta;
+                }
+            },
+            transitions:{
+                bounce:{
+                    enterClass:'zoomInLeft',
+                    leaveClass:'zoomOutRight'
                 }
             }
         }).$mount("#box");
