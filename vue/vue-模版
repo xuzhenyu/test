@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template</title>
+    <script src="1.0/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-aaa></my-aaa>
+    </div>
+    <template id="aaa">
+        <h2>这是一个标题</h2>
+        <ul>
+            <li v-for="item in arr">{{ item.name }}</li>
+        </ul>
+    </template>
+</body>
+<script>
+    new Vue({
+        components:{
+            'my-aaa':{
+                data(){
+                    return{
+                        arr:[
+                            {name:"apple"},
+                            {name:"pear"},
+                            {name:"banana"}
+                        ]
+                    }
+                },
+                template:"#aaa"
+            }
+        }
+    }).$mount('#app');
+</script>
+</html>
