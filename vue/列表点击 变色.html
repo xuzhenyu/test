@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="1.0/vue.js"></script>
+    <style>
+        .on{
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in attrs" :class="{'on':idx==$index}" @click="toggle($index)">{{ item.name }}</li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            data:{
+                attrs:[
+                    {name:"lucy"},
+                    {name:"tom"},
+                    {name:"tim"}
+                ],
+                idx:0
+            },
+            methods:{
+                toggle:function(index){
+                    this.idx=index;
+                }
+            }
+        }).$mount('#app');
+    </script>
+</body>
+</html>
