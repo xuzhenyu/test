@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态组件</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="组件aaa" @click="a='aaa'">
+        <input type="button" value="组件bbb" @click="a='bbb'">
+        <my-test v-bind:is='a'></my-test>
+    </div>
+    <script>
+        new Vue({
+            data:{
+                a:'aaa'
+            },
+            components:{
+                aaa:{
+                    template:"<h2>这是组件AAA</h2>"
+                },
+                bbb:{
+                    template:"<h2>这是组件BBB</h2>"
+                }
+            }
+        }).$mount('#app');
+    </script>
+</body>
+</html>
