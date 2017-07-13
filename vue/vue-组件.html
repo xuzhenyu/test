@@ -10,12 +10,7 @@
         <my-data></my-data>
     </div>
     <script>
-        // Vue.component('my-data',{
-        //     template:'<p>今天是{{meg}}</p>'
-        // })
-        // new Vue({
-        // }).$mount("#app");
-        new Vue({
+/*        new Vue({
             components:{
                 'my-data':{
                     data(){
@@ -31,7 +26,19 @@
                     template:'<h2 @click="ckk">今天的天气{{meg}}</h2>'
                 }
             }
-        }).$mount('#app');
+        }).$mount('#app');*/
     </script>
+    <script>
+         Vue.component('my-data',{
+			 data(){
+			 	return{
+					meg:"真好"
+				}
+			 },
+             template:'<p>今天是{{meg}}</p>'
+         })
+         new Vue({
+         }).$mount("#app");
+	</script>
 </body>
 </html>
