@@ -1,0 +1,34 @@
+{
+    "result":[
+        {
+            "name":"奥迪A3 进取版",
+            "price":"34",
+            "img":"../../static/w_A6L2.4.png"
+        },
+        {
+            "name":"奥迪A3 时尚版",
+            "price":"44",
+            "img":"../../static/w_A6L2.0.png"
+        },
+        {
+            "name":"奥迪A3 运动版",
+            "price":"36",
+            "img":"../../static/w_A6L2.4T.png"
+        },
+        {
+            "name":"奥迪A3 风尚版",
+            "price":"39",
+            "img":"../../static/w_A6L2.png"
+        },
+        {
+            "name":"奥迪A3 进取版",
+            "price":"24",
+            "img":"../../static/w_A6L2.0.png"
+        },
+        {
+            "name":"奥迪A3 卓越版",
+            "price":"40",
+            "img":"../../static/w_A6L2.4.png"
+        }
+    ]
+}

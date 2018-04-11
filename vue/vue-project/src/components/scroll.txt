@@ -1,0 +1,101 @@
+<template>
+    <div>
+        <dl class="w-ac-dl">
+            <dt>购车者说</dt>
+        </dl>
+<swiper :options="swiperOption" ref="mySwiper">
+  <!-- 幻灯内容 -->
+  <swiper-slide><router-link :to="{name:'carspeak'}"><img src="../assets/image/demo/w-banner01.png" alt=""></router-link></swiper-slide>
+  <swiper-slide><img src="../assets/image/demo/w-banner02.png" alt=""></swiper-slide>
+  <swiper-slide><img src="../assets/image/demo/w-banner03.png" alt=""></swiper-slide>
+  <swiper-slide><img src="../assets/image/demo/w-banner04.png" alt=""></swiper-slide>
+  <swiper-slide><img src="../assets/image/demo/w-banner05.png" alt=""></swiper-slide>
+  <!-- 以下控件元素均为可选 -->
+  <div class="swiper-pagination" slot="pagination"></div>
+</swiper>
+    </div>
+</template>
+<script>
+export default {
+   //name: 'carrousel',
+    data() {
+      return {
+        notNextTick: true,
+        swiperOption: {
+          // swiper options 所有的配置同swiper官方api配置
+          autoplay: {
+            delay:3000,
+            disableOnInteraction: false
+          },
+          speed: 400,
+          loop:true,
+          grabCursor: true,
+          setWrapperSize: true,
+          //autoHeight: true,          
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          mousewheelControl: true,
+          observeParents: true,
+          debugger: true,
+          onTransitionStart (swiper) {
+           // console.log(swiper)
+          }
+          // more Swiper configs and callbacks...
+          // ...
+        }
+      }
+    },
+
+    computed: {
+      swiper() {
+        return this.$refs.mySwiper.swiper
+      }
+    },
+    mounted() {
+      this.swiper.slideTo(1, 1000, false)
+    }
+  }
+</script>
+<style>
+.w-ac-dl {
+  max-width: 10.0rem;
+  margin: 0 auto;
+  color: #5f5f5f;
+  overflow: hidden;
+  margin-bottom: 0.266667rem;
+}
+.w-ac-dl dt {
+  background: url(../assets/image/w_icon_line.png) no-repeat 0.33333rem 0.29333rem;
+  background-size: 0.12rem 0.413333rem;
+  padding-left: 0.6rem;
+  height: 0.933333rem;
+  line-height: 0.933333rem;
+  font-size: 0.373333rem;
+}
+.w-ac-dl dd {
+  padding-left: 0.6rem;
+  font-size: 0.32rem;
+}
+.w-ac-dl .w-dt-big {
+  font-size: 0.48rem;
+}
+.swiper-container{
+  padding-bottom: 0.75rem;
+}
+.swiper-pagination-bullet{
+  width: 0.25rem;
+  height: 0.25rem;
+}
+.swiper-pagination{
+  margin-bottom: 0.2rem;
+}
+.swiper-slide{
+  width: 18.75rem!important;
+  height: 8.125rem!important;
+}
+.swiper-slide img{
+  width: 18.75rem!important;
+  height: 8.125rem!important;
+}
+</style>
