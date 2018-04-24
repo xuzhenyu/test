@@ -12,7 +12,7 @@
       {{ value }}  
     </li>
   </ul>
-  <hr>
+<!--   <hr>
   <ul>
     <li v-for="value in json">
       {{ value }}  
@@ -23,6 +23,12 @@
     <li v-for="(k,v) in json">
       {{ k }}  {{ v }}
     </li>
+  </ul> -->
+  <ul>
+    <li v-for="item in itemSort">{{ item }}</li>
+  </ul>
+  <ul>
+    <li v-for="meg in garden">姓名：{{meg.name}}<br/>年龄：{{meg.age}}</li>
   </ul>
 </div>
     <script>
@@ -30,9 +36,32 @@
           el: '#app',
           data: {
             arr: ['apple','banana','orange','pear'],
-            json:{a:'apple',b:'banana',c:'orange',d:'pear'}
+            json:{a:'apple',b:'banana',c:'orange',d:'pear'},
+            num:[1,23,40,15,56,76,100],
+            garden:[
+            {name:'jerry',age:24},
+            {name:'lucy',age:20},
+            {name:'litao',age:14},
+            {name:'black',age:26}
+            ]
+          },
+          computed:{
+            itemSort:function(){
+             return sortByKey(this.garden,"age");
+            }
           }
         })
+        function numSort(a,b){
+          return a-b;
+        }
+        //数组对象方法排序:
+        function sortByKey(array,key){
+            return array.sort(function(a,b){
+              var x=a[key];
+              var y=b[key];
+              return ((x<y)?-1:((x>y)?1:0));
+           });
+        }
     </script>
 </body>
 </html>
