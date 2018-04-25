@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <!-- 直接在模板中绑定表达式 -->
+        <p>{{message.split('').reverse().join('')}}</p>
+
+        <!-- 运用计算属性 -->
+        <p>{{reverseMessage}}</p>
+
+        <!-- 运用methods方式 -->
+        <p>{{methodMessage()}}</p>
+    </div>
+    <script>
+        var vm=new Vue({
+            data:{
+                message:"hello"
+            },
+            computed:{
+                reverseMessage:function(){
+                    return this.message.split('').reverse().join(',');
+                }
+            },
+
+            methods:{
+                methodMessage:function () {
+                    return this.message.split('').reverse().join(',');
+                }
+            }
+
+        }).$mount("#app");
+    </script>
+</body>
+</html>
