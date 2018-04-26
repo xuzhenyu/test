@@ -28,7 +28,7 @@
     <li v-for="item in itemSort">{{ item }}</li>
   </ul>
   <ul>
-    <li v-for="meg in garden">姓名：{{meg.name}}<br/>年龄：{{meg.age}}</li>
+    <li v-for="meg in itemSort">姓名：{{meg.name}}<br/>年龄：{{meg.age}}</li>
   </ul>
 </div>
     <script>
@@ -47,6 +47,7 @@
           },
           computed:{
             itemSort:function(){
+              //return this.garden;
              return sortByKey(this.garden,"age");
             }
           }
